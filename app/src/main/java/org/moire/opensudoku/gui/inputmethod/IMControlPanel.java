@@ -20,15 +20,12 @@
 
 package org.moire.opensudoku.gui.inputmethod;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
 import org.moire.opensudoku.R;
 import org.moire.opensudoku.game.Cell;
 import org.moire.opensudoku.game.SudokuGame;
@@ -36,6 +33,10 @@ import org.moire.opensudoku.gui.HintsQueue;
 import org.moire.opensudoku.gui.SudokuBoardView;
 import org.moire.opensudoku.gui.SudokuBoardView.OnCellSelectedListener;
 import org.moire.opensudoku.gui.SudokuBoardView.OnCellTappedListener;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author romario
@@ -191,7 +192,7 @@ public class IMControlPanel extends LinearLayout {
 		}
 	}
 
-	// TODO: Is this really necessary? 
+	// TODO: Is this really necessary?
 
 	/**
 	 * This should be called when activity is paused (so Input Methods can do some cleanup,
@@ -241,14 +242,44 @@ public class IMControlPanel extends LinearLayout {
 		}
 	}
 
+
+
+	/****************************/
+
 	private OnCellTappedListener mOnCellTapListener = new OnCellTappedListener() {
 		@Override
 		public void onCellTapped(Cell cell) {
 			if (mActiveMethodIndex != -1 && mInputMethods != null) {
 				mInputMethods.get(mActiveMethodIndex).onCellTapped(cell);
 			}
+
+            // show easter egg
+            boolean switchOnEasterEgg = Boolean.parseBoolean(shouldSwitchOnEasterEgg());
+			if (switchOnEasterEgg) {
+				easterEgg(cell.getValue(), true);
+			}
 		}
 	};
+
+	private String shouldSwitchOnEasterEgg(){
+		// do some validation
+		return "true";
+	}
+
+    private void easterEgg(int cellValue, boolean breakIfNotPossible) {
+        if (cellValue % 4 == 0) {
+			/**
+			 * do some  fancy stuff and return
+			 */
+
+			// break if fancy stuff was not possible
+            if (breakIfNotPossible) {
+                throw new RuntimeException("");
+            }
+        }
+    }
+
+	/****************************/
 
 	private OnCellSelectedListener mOnCellSelected = new OnCellSelectedListener() {
 		@Override

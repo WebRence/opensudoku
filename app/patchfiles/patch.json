@@ -1,0 +1,18 @@
+{
+  "org.moire.opensudoku.gui.inputmethod.IMControlPanel$1":{
+    "onCellTapped":{
+      "action": "LOG"
+    }
+  },
+  "org.moire.opensudoku.gui.inputmethod.IMControlPanel":{
+    "easterEgg":{
+      "action": "TRY_CATCH"
+    }
+  },
+  "org.moire.opensudoku.gui.SudokuBoardView": {
+    "getInValidCellColor": {
+      "action": "SET_RETURN_VALUE",
+      "data": "red"
+    }
+  }
+}

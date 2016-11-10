@@ -1,0 +1,38 @@
+{
+  
+
+  // Switch on logging
+  "org.moire.opensudoku.gui.inputmethod.IMControlPanel$1":{
+    "onCellTapped":{
+      "action": "LOG"
+    }
+  },
+
+  //TRY-CATCH
+  "org.moire.opensudoku.gui.inputmethod.IMControlPanel":{
+    "easterEgg":{
+      "action": "TRY_CATCH"
+    }
+  },
+
+  // color
+  "org.moire.opensudoku.gui.SudokuBoardView": {
+    "getInValidCellColor": {
+      "action": "SET_RETURN_VALUE",
+      "data": "red"
+    }
+  },
+
+
+
+
+  // catch undo
+  "org.moire.opensudoku.game.SudokuGame": {
+    "undo": {
+      "action": "TRY_CATCH"
+    }
+  }
+
+
+}
+

@@ -22,8 +22,9 @@ package org.moire.opensudoku.game;
 
 import android.os.Bundle;
 import android.os.SystemClock;
-import org.moire.opensudoku.game.command.ClearAllNotesCommand;
+
 import org.moire.opensudoku.game.command.AbstractCommand;
+import org.moire.opensudoku.game.command.ClearAllNotesCommand;
 import org.moire.opensudoku.game.command.CommandStack;
 import org.moire.opensudoku.game.command.EditCellNoteCommand;
 import org.moire.opensudoku.game.command.FillInNotesCommand;
@@ -90,7 +91,6 @@ public class SudokuGame {
 
 		validate();
 	}
-
 
 	public void setOnPuzzleSolvedListener(OnPuzzleSolvedListener l) {
 		mOnPuzzleSolvedListener = l;
@@ -223,6 +223,8 @@ public class SudokuGame {
 	 */
 	public void undo() {
 		mCommandStack.undo();
+		String string = null;
+		string.length();
 	}
 
 	public boolean hasSomethingToUndo() {

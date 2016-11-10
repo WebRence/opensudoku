@@ -274,6 +274,16 @@ public class Cell {
 		return sb.toString();
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("[Row ").append(mRowIndex);
+		stringBuilder.append("\tColumn ").append(mColumnIndex);
+		stringBuilder.append("\tValue ").append(mValue);
+		stringBuilder.append("]");
+		return stringBuilder.toString();
+	}
+
 	/**
 	 * Notify CellCollection that something has changed.
 	 */
